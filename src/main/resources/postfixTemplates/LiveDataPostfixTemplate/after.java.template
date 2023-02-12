@@ -1,0 +1,5 @@
+class Foo {
+  private val _someLiveData: MutableLiveData<T> = MutableLiveData()
+  val someLiveData: LiveData<T>
+    get() = _someLiveData
+}

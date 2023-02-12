@@ -7,7 +7,9 @@ import com.intellij.psi.PsiFile
 import kotlin.jvm.internal.Intrinsics
 
 class LiveDataPostfixTemplateProvider : PostfixTemplateProvider {
-    private val _templates: MutableSet<PostfixTemplate> = mutableSetOf(LiveDataPostfixTemplate())
+    private val _templates: MutableSet<PostfixTemplate> = mutableSetOf(
+        LiveDataPostfixTemplate()
+    )
 
     override fun getTemplates(): MutableSet<PostfixTemplate> {
         return _templates

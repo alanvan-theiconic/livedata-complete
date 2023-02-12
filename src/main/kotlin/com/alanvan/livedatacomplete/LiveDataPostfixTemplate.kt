@@ -7,9 +7,9 @@ import org.jetbrains.kotlin.psi.psiUtil.allChildren
 
 class LiveDataPostfixTemplate : StringBasedPostfixTemplate(
     "l",
-    "private val _liveData: MutableLiveData<Boolean> = MutableLiveData()" +
-            "\nval liveData: LiveData<Boolean>" +
-            "\n  get() = _liveData",
+    "private val _someLiveData: MutableLiveData<Boolean> = MutableLiveData()" +
+            "\nval someLiveData: LiveData<Boolean>" +
+            "\n  get() = _someLiveData",
     LiveDataPostfixTemplateExpressionSelector()
 ) {
     override fun getTemplateString(element: PsiElement): String {
