@@ -13,23 +13,20 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-    <description>
-        This plugin helps complete boilerplate code when working with LiveData.
-        With this postfix template, you can add a public LiveData variable and a backing
-        public MutableLiveData variable.
-
-        Below is an example of how this template works:
-
-        Before:
-        class MyViewModel : ViewModel() {
-          val myLiveData: LiveData&lt;String&gt;
-        }
-
-        After:
-        class MyViewModel : ViewModel() {
-          private val _myLiveData = MutableLiveData&lt;String&gt;()
-          val myLiveData: LiveData&lt;String&gt; = _myLiveData
-        }
+    <description><![CDATA[
+      This plugin helps complete boilerplate code when working with LiveData.
+      With this postfix template, you can add a public LiveData variable and a backing
+      private MutableLiveData variable. Example usage:
+      <ul>
+        <li> Use postfix: .l<br/>
+        `val someBoolean: LiveData<Boolean>.l`</b><br/>
+        </li>
+        <li> Result: <br/>
+        `private val _someBoolean: MutableLiveData<Boolean> = MutableLiveData()`<br/>
+        `val someBoolean: LiveData<Boolean> = _someBoolean`<br/>
+        </li>
+      </ul>
+    ]]>
     </description>
 
     <!-- Product and plugin compatibility requirements.
