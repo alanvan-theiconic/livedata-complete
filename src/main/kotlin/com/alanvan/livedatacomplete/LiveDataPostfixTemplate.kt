@@ -24,6 +24,7 @@ class LiveDataPostfixTemplate : StringBasedPostfixTemplate(
     companion object {
         const val LIVEDATA_FQ_NAME = "androidx.lifecycle.LiveData"
         const val MUTABLE_LIVEDATA_FQ_NAME = "androidx.lifecycle.MutableLiveData"
+        const val IDENTIFIER_ELEMENT_TYPE = "IDENTIFIER"
     }
     override fun expandForChooseExpression(expr: PsiElement, editor: Editor) {
         (expr.containingFile as? KtFile)?.let { file ->
@@ -54,7 +55,7 @@ class LiveDataPostfixTemplate : StringBasedPostfixTemplate(
         var variableName = ""
         var isVariableNameAssigned = false
         element.parent.allChildren.iterator().forEach {
-            if (!isVariableNameAssigned && it.elementType?.debugName == "IDENTIFIER") {
+            if (!isVariableNameAssigned && it.elementType?.toString() == IDENTIFIER_ELEMENT_TYPE) {
                 variableName = it.text
                 isVariableNameAssigned = true
             }
